@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftGuard - Authentic Cultural Art Detector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">🧢 CraftGuard</h1>
+                <p class="tagline">Protecting Cultural Heritage Through AI</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Detect Fake Cultural Products</h2>
+            <p>Upload an image of cultural art to check its authenticity using AI</p>
+        </section>
+
+        <section class="upload-section">
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📸</div>
+                        <h3>Upload Product Image</h3>
+                        <p>Drag & drop an image or click to browse</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                            Choose Image
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="url-input-section">
+                    <h4>Or paste product URL:</h4>
+                    <input type="url" id="urlInput" placeholder="https://example.com/product-image.jpg">
+                    <button class="analyze-btn" onclick="analyzeFromUrl()">Analyze URL</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section" id="previewSection" style="display: none;">
+            <h3>Image Preview</h3>
+            <div class="image-preview">
+                <img id="previewImage" alt="Preview">
+                <button class="analyze-btn" onclick="analyzeImage()">🧠 Analyze with AI</button>
+            </div>
+        </section>
+
+        <section class="loading-section" id="loadingSection" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Analyzing cultural patterns...</p>
+        </section>
+
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="result-card">
+                <h3>Analysis Results</h3>
+                <div class="authenticity-score">
+                    <div class="score-circle" id="scoreCircle">
+                        <span id="scoreText">0%</span>
+                    </div>
+                    <div class="score-details">
+                        <h4 id="resultTitle">Analyzing...</h4>
+                        <p id="resultDescription">Please wait while we analyze the image.</p>
+                    </div>
+                </div>
+                
+                <div class="analysis-details" id="analysisDetails">
+                    <h4>Detailed Analysis:</h4>
+                    <ul id="analysisList"></ul>
+                </div>
+
+                <div class="recommendations" id="recommendations">
+                    <h4>💡 Tips to Identify Authentic Cultural Art:</h4>
+                    <ul id="tipsList"></ul>
+                </div>
+
+                <div class="verified-sellers" id="verifiedSellers">
+                    <h4>🔗 Find Verified Artisans:</h4>
+                    <div id="sellersList"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cultural-database">
+            <h3>Supported Cultural Art Forms</h3>
+            <div class="art-forms-grid">
+                <div class="art-form-card">
+                    <h4>🎨 Madhubani</h4>
+                    <p>Traditional folk art from Bihar with geometric patterns and natural dyes</p>
+                </div>
+                <div class="art-form-card">
+                    <h4>🌿 Warli</h4>
+                    <p>Tribal art from Maharashtra featuring simple geometric shapes</p>
+                </div>
+                <div class="art-form-card">
+                    <h4>🦚 Kalamkari</h4>
+                    <p>Hand-painted textile art from Andhra Pradesh with natural dyes</p>
+                </div>
+                <div class="art-form-card">
+                    <h4>🧵 Banarasi</h4>
+                    <p>Silk sarees from Varanasi with intricate brocade work</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CraftGuard - Protecting Cultural Heritage</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
